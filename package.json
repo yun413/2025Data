@@ -1,0 +1,23 @@
+{
+  "name": "2025data",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/yun413/2025Data#readme",
+  "bugs": {
+    "url": "https://github.com/yun413/2025Data/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yun413/2025Data.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "bmi.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
+}

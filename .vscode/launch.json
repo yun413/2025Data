@@ -7,7 +7,7 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "啟動程式",
+            "name": "RUN NodeJS",
             "skipFiles": [
                 "<node_internals>/**"
             ],

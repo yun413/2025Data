@@ -1,11 +1,25 @@
+//使用while回圈计算1+2+...+n的和
+// function sum(n)
+// {
+//     var result = 0;
+//     var i=0;
+//     while(i++ < n)
+//     {
+//         result += i;
+//     }
+//     return result;
+// }
+
+
+//使用do...while回圈计算1+2+...+n的和
 function sum(n)
 {
     var result = 0;
-    var i=0;
-    while(i++ < n)
-    {
+    var i=1;
+    do {
         result += i;
     }
+    while(i++ < n);
     return result;
 }
 

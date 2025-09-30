@@ -26,3 +26,5 @@ function sum(n)
 //test
 var n=10;
 console.log("1+2+...+"+n+"="+sum(n));
+
+//Q1:更好的方式，固定演算次數，求得一樣的結果

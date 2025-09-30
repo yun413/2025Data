@@ -9,8 +9,9 @@ function avg(score)
         average=sum/score.length;
     return average;
 }
-
+//test
 var Score=[5,8,20,55,70,41,19];
+//var Score=[];
 console.log(Score.toString()+"average:"+avg(Score));
 
 

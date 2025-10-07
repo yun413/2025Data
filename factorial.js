@@ -5,15 +5,18 @@ function fact(n){
     else
         return n*(fact(n-1));
 }
-//rcursive sum 1+2+3+...+n
+
+
+//test
+var n=3;
+console.log (n+ "! = " +fact(n));
+
+
+
+//rcursive sum 1+2+3+...+n //以下是sum的遞迴寫法
 function sum(n){
     if(n==1)
         return 1;
     else
         return n+sum(n-1);
 }
-
-
-//test
-var n=3;
-console.log (n+ "! = " +fact(n));

@@ -1,12 +1,12 @@
 //費氏數列 //很慢
 //A1:
-function fib(n){
-    //prevent n<0
-    if(n==0||n==1)
-        return n;
-    else
-        return fib(n-1)+fib(n-2);
-}
+// function fib(n){
+//     //prevent n<0
+//     if(n==0||n==1)
+//         return n;
+//     else
+//         return fib(n-1)+fib(n-2);
+// }
 
 
 //用迴圈方式寫 //很快

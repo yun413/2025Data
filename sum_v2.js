@@ -6,7 +6,7 @@ function sum(n){
         return null;
     }else{
         for(var i=1;i<=n;i++){
-            if(i%2==0) //even %算餘數 
+            if(i%2==0) //even %算餘數 1/2=1 2/2=0 3/2=1 4/2=0
                 sum-=i; 
             else
                 sum+=i; //odd 奇數

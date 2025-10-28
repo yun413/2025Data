@@ -80,4 +80,7 @@ class Life {
 
 var myGame1 = new Life(10,10)
 var myGame2 = new Life(5,5)
+myGame1.init(10);
+myGame1.update();
+console.log(myGame1.grid)
 //第一章時間複雜度要借書看看

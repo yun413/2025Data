@@ -58,10 +58,10 @@ class Life {
                         nextGrid[r][c]=LIVE;
                 }
                 // if(nCount<2 || nCount>3){
-                //     nextGrid[r][c]= (this.grid[r][c]==LIVE) ? DEAD: LIVE;
+                //     nextGrid[r][c]= (this.grid[r][c]==LIVE) ? DEAD: LIVE;//有問題
                 // }
                 // if(nCount==3){
-                //  nextGrid[r][c]= (this.grid[r][c]==DEAD) ? LIVE: DEAD;
+                //  nextGrid[r][c]= (this.grid[r][c]==DEAD) ? LIVE: DEAD;//有問題
                 // }
 
             }

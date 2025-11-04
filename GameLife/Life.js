@@ -80,13 +80,6 @@ var LifeSet = [
 ]
 
 Life.prototype.init = function (type) {
-    if (type > LifeSet.length || type < 0)
-        return;
-    var offsetRow = Math.floor((this.row - LifeSet[type].maxR) / 2);
-    
-}
-
-
     //random
     // init=function(nLive){
     //     var randCount=nLive;
@@ -99,6 +92,65 @@ Life.prototype.init = function (type) {
     //         }
     //     }
     // }
+    if (type > LifeSet.length || type < 0)
+        return;
+    var offsetRow = Math.floor((this.row - LifeSet[type].maxR) / 2);
+    var offsetCol = Math.floor((this.col - LifeSet[type].maxC) / 2);
+
+    //init by LifeSet[]
+    for (var i = 0; i < LifeSet[type].set.length; i++) {
+        this.grid[offsetRow + LifeSet[type].set[i].r][offsetCol + LifeSet[type].set[i].c] = LIVE;
+    }
+}
+
+//external
+// Life.prototype.getStatusAt = function(_row,_col){
+//     if(_row<0 || _col<0 || _row>=this.row || _col>=this.col){
+//         return DEAD;
+//     }else{
+//         this.grid[_row][_col]
+//     }
+// }
+
+// function getStatusAt(_row,_col){
+
+// }
+//draw board
+class Board{
+    constructor(_game, _canvas){
+        this.game=_game;
+        this.canvas = document.getElementById(_canvas).getContext("2d");
+        //canvas width/game.col
+        var wSize = document.getElementById(_canvas).width/this.game.col;
+        var hSize = document.getElementById(_canvas).height/this.game.row;
+        this.size = Math.min(wSize, hSize)
+    }
+    drawPoint = function(_r, _c){
+        if(this.game.grid[_r][_c]==LIVE)
+            this.canvas.fillStyle = "#ff0000";//red
+        else
+            this.canvas.fillStyle = "#ffffff";//white
+        //fill
+        this.canvas.fillRect(_c*this.size, _r*this.size, this.size, this.size);
+        //border
+        this.canvas.strokeRect(_c*this.size, _r*this.size, this.size, this.size);
+        this.canvas.lineStyle = "#000000";
+    }
+    draw = function(){
+        for (let r = 0; r < this.game.row; r++) {
+            for (let c = 0; c < this.game.col; c++) {
+                this.drawPoint(r,c);
+            }
+            
+        }
+    }
+
+}
+
+
+
+
+
 
 
 

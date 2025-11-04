@@ -70,20 +70,37 @@ class Life {
         //garbage collection
         //gc()
     }
-    //exercise
-    init=function(nLive){
-        var randCount=nLive;
-        while(randCount>0){
-            var r=(Math.random()*this.row);
-            var c=(Math.random()*this.col);
-            if(this.grid[r][c]==DEAD){
-                this.grid[r][c]=LIVE;
-                randCount--;
-            }
-        }
-    }
-
 }
+//exercise
+//預設集
+var LifeSet = [
+{ name: "Pentomino", maxR: 2, maxC: 2, set: [{ r: 1, c: 0 }, { r: 2, c: 0 }, { r: 0, c: 1 }, { r: 1, c: 1 }, { r: 1, c: 2 }] },
+{ name: "Tumbler", maxR: 5, maxC: 5, set: [{ r: 1, c: 0 }, { r: 4, c: 0 }, { r: 1, c: 1 }, { r: 2, c: 1 }, { r: 3, c: 1 }, { r: 4, c: 1 }, { r: 0, c: 2 }, { r: 5, c: 2 }, { r: 0, c: 3 }, { r: 2, c: 3 }, { r: 3, c: 3 }, { r: 5, c: 3 }, { r: 0, c: 4 }, { r: 5, c: 4 }, { r: 1, c: 5 }, { r: 2, c: 5 }, { r: 3, c: 5 }, { r: 4, c: 5 }] },
+{ name: "Cheshire Cat", maxR: 6, maxC: 5, set: [{ r: 1, c: 0 }, { r: 2, c: 0 }, { r: 4, c: 0 }, { r: 5, c: 0 }, { r: 1, c: 1 }, { r: 2, c: 1 }, { r: 4, c: 1 }, { r: 5, c: 1 }, { r: 2, c: 2 }, { r: 4, c: 2 }, { r: 0, c: 3 }, { r: 2, c: 3 }, { r: 4, c: 3 }, { r: 6, c: 3 }, { r: 0, c: 4 }, { r: 2, c: 4 }, { r: 4, c: 4 }, { r: 6, c: 4 }, { r: 0, c: 5 }, { r: 1, c: 5 }, { r: 5, c: 5 }, { r: 6, c: 5 }] }
+]
+
+Life.prototype.init = function (type) {
+    if (type > LifeSet.length || type < 0)
+        return;
+    var offsetRow = Math.floor((this.row - LifeSet[type].maxR) / 2);
+    
+}
+
+
+    //random
+    // init=function(nLive){
+    //     var randCount=nLive;
+    //     while(randCount>0){
+    //         var r=(Math.random()*this.row);
+    //         var c=(Math.random()*this.col);
+    //         if(this.grid[r][c]==DEAD){
+    //             this.grid[r][c]=LIVE;
+    //             randCount--;
+    //         }
+    //     }
+    // }
+
+
 
 var myGame1 = new Life(10,10)
 var myGame2 = new Life(5,5)

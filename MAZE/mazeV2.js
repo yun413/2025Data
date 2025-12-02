@@ -25,9 +25,21 @@ var Stack=[];
 var Direction=[[-1,0],[0,-1],[1,0],[0,1]].sort((a,b)=>{return Math.random()-0.5});//permutation
 
 var CP=start;//currentPosition
+
+function sleep (ms){
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function go(){
+    var CP=start;
+
+
 do{
     MAZE[CP.row][CP.col]=2;
     drawBoard();
+
+    await sleep(1000);
+
     //4 directions
     if(MAZE[CP.row+Direction[0][0]][CP.col+Direction[0][1]]==0){//dir0
         Stack.push(CP);
@@ -54,7 +66,7 @@ do{
     }
 //}while(!(CP.row==end.row && CP.col==end.col));
 }while(CP.row!=end.row || CP.col!=end.col);
-
+}
 // if(Stack.length>0){
 //   //print path 
 //   Stack.push(end);
